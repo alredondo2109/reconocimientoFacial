@@ -37,24 +37,48 @@ while True:
         '''
         # EigenFaces
         if result[1] < 5700:
+            confidence = 100 - result[1]  # Porcentaje de acierto
+            error = result[1]  # Error
+            print(f"Porcentaje de acierto: {confidence:.2f}%")
+            print(f"Error: {error:.2f}%")
             cv2.putText(frame,'{}'.format(imagePaths[result[0]]),(x,y-25),2,1.1,(0,255,0),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
         else:
+            confidence = 100 - result[1]  # Porcentaje de acierto
+            error = result[1]  # Error
+            print(f"Porcentaje de acierto: {confidence:.2f}%")
+            print(f"Error: {error:.2f}%")
             cv2.putText(frame,'Desconocido',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)
         # FisherFace
         if result[1] < 500:
+            confidence = 100 - result[1]  # Porcentaje de acierto
+            error = result[1]  # Error
+            print(f"Porcentaje de acierto: {confidence:.2f}%")
+            print(f"Error: {error:.2f}%")
             cv2.putText(frame,'{}'.format(imagePaths[result[0]]),(x,y-25),2,1.1,(0,255,0),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
         else:
+            confidence = 100 - result[1]  # Porcentaje de acierto
+            error = result[1]  # Error
+            print(f"Porcentaje de acierto: {confidence:.2f}%")
+            print(f"Error: {error:.2f}%")
             cv2.putText(frame,'Desconocido',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)
         '''
         # LBPHFace
         if result[1] < 70:
+            confidence = 100 - result[1]  # Porcentaje de acierto
+            error = result[1]  # Error
+            print(f"Porcentaje de acierto: {confidence:.2f}%")
+            print(f"Error: {error:.2f}%")
             cv2.putText(frame,'{}'.format(imagePaths[result[0]]),(x,y-25),2,1.1,(0,255,0),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
         else:
+            confidence = 100 - result[1]  # Porcentaje de acierto
+            error = result[1]  # Error
+            print(f"Porcentaje de acierto: {confidence:.2f}%")
+            print(f"Error: {error:.2f}%")
             cv2.putText(frame,'Desconocido',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)
     cv2.imshow('frame',frame)
