@@ -17,22 +17,8 @@ while True:
             face_frame_encondings = face_recognition.face_encodings(frame,known_face_locations=[face_location])[0]
             result = face_recognition.compare_faces([face_frame_encondings],face_image_encodings)
 
-            # Calcular la distancia euclidiana entre los rostros
-            face_distance = face_recognition.face_distance([face_frame_encondings], face_image_encodings)
-            match_index = None
-
-            # Encontrar la mejor coincidencia (rostro más similar)
-            if True in result:
-                match_index = result.index(True)
-
-            # Calcular el porcentaje de acierto y el error
-            if match_index is not None:
-                distance = face_distance[match_index]
-                accuracy = (1 - distance) * 100
-                error = 100 - accuracy
-                print(f"Porcentaje de acierto: {accuracy:.2f}%")
-                print(f"Error: {error:.2f}%")
-
+            
+            
             if result[0] == True:
                 text = "Alejandro"
                 color = (125, 220, 0)
